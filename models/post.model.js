@@ -33,3 +33,11 @@ exports.findPost = (obj, next) => {
         next(err, post)
     })
 }
+
+exports.getAllPosts = (obj, next) => {
+    const post = new Post(obj);
+
+    post.find(function(err, post) {
+        next(err, post)
+    })
+}
