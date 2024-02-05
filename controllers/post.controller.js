@@ -23,7 +23,17 @@ PostController.update = (req, res) => {
 };
 
 PostController.findPost = (req, res) => {
-
+    return PostModel.findPost(req.body, (err, post) => {
+        if (err) {
+            return res.status(500).end();
+        } else {
+            return res.json({
+                title: post.title,
+                content: 'Random content',
+                author: 'stswenguser'
+                });
+        }
+    })
 };
 
 PostController.getAllPosts = (req, res) => {

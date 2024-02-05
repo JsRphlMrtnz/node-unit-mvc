@@ -19,9 +19,17 @@ exports.createPost = (obj, next) => {
 }
 
 exports.updatePost = (obj, next) => {
-    const update = new Post(obj);
+    const post = new Post(obj);
 
-    update.save(function(err, update) {
-        next(err, update)
+    post.save(function(err, post) {
+        next(err, post)
+    })
+}
+
+exports.findPost = (obj, next) => {
+    const post = new Post(obj);
+
+    post.findOne(function(err, post) {
+        next(err, post)
     })
 }
