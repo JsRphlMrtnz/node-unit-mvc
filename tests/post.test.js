@@ -174,7 +174,7 @@ describe('Post controller', () => {
             PostController.findPost(req, res);
 
             // Assert
-            sinon.assert.calledWith(PostModel.findPost, req);
+            sinon.assert.calledWith(PostModel.findPost, req.body);
             sinon.assert.calledWith(res.json, sinon.match({ title: req.body.title }));
 
         });
@@ -188,7 +188,7 @@ describe('Post controller', () => {
             PostController.findPost(req, res);
 
             // Assert
-            sinon.assert.calledWith(PostModel.findPost, req);
+            sinon.assert.calledWith(PostModel.findPost, req.body);
             sinon.assert.calledWith(res.status, 500);
             sinon.assert.calledOnce(res.status(500).end);
         });
