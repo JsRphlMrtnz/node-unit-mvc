@@ -137,7 +137,7 @@ describe('Post controller', () => {
         });
     });
 
-    describe('findPost', () => {
+    describe('find', () => {
         var findPostStub;
 
         beforeEach(() => {

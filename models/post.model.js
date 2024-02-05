@@ -21,7 +21,7 @@ exports.createPost = (obj, next) => {
 exports.updatePost = (obj, next) => {
     const post = new Post(obj);
 
-    post.save(function(err, post) {
+    post.updateOne(function(err, post) {
         next(err, post)
     })
 }
